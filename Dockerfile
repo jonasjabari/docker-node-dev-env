@@ -10,6 +10,8 @@ RUN npm install -g nyc
 ONBUILD COPY ./package.json /module
 ONBUILD RUN npm install
 
+ONBUILD COPY /.eslintrc /module
+
 RUN mkdir /module/src
 RUN mkdir /module/test
 
