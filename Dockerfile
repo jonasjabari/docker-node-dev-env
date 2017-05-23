@@ -15,6 +15,6 @@ ONBUILD COPY /.eslintrc /module
 RUN mkdir /module/src
 RUN mkdir /module/test
 
-WORKDIR /module/src
+WORKDIR /module
 
-CMD ["nodemon", "index.js"]
+CMD ["nodemon", "/module/src/index.js"]
