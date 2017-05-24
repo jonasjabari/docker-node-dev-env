@@ -78,4 +78,63 @@ If the package.json has changed, you need to rebuild the container.
 'npm install' is only executed while building the image. 
 This might be a limitation, but I'm used to it and don't care too much about it.
 
-The package.json is not mounted into the container. 
+The package.json is not mounted into the container.
+
+### .eslintrc
+
+The .eslintrc is project-specific and therefor needs to be specified in your project. 
+It might look like this:
+
+```json
+{
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "script"
+  },
+  "rules": {
+    "array-bracket-spacing": [2, "never"],
+    "block-scoped-var": 2,
+    "brace-style": [2, "1tbs"],
+    "camelcase": 1,
+    "computed-property-spacing": [2, "never"],
+    "curly": 2,
+    "eol-last": 2,
+    "eqeqeq": [2, "smart"],
+    "max-depth": [1, 3],
+    "max-len": [1, 80],
+    "max-statements": [1, 30],
+    "new-cap": 1,
+    "no-extend-native": 2,
+    "no-mixed-spaces-and-tabs": 2,
+    "no-trailing-spaces": 2,
+    "no-unused-vars": 1,
+    "no-use-before-define": [2, "nofunc"],
+    "object-curly-spacing": [2, "always"],
+    "quotes": [2, "single", "avoid-escape"],
+    "semi": [2, "always"],
+    "keyword-spacing": [2, {"before": true, "after": true}],
+    "space-unary-ops": 2
+  }
+}
+```
+
+### Testing with Mocha
+
+The image is desigend to run tests found in your project. By default it uses the assert-syntax.
+A test might look like this:
+
+```javascript
+const assert = require('assert');
+
+describe('your module', () => {
+
+  it('work', () => {
+    assert.equal(true, true);
+  });
+
+});
+
+```
