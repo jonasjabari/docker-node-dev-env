@@ -6,7 +6,7 @@ RUN npm install -g \
   mocha \
   nyc
 
-COPY ./entrypoints /entrypoints
+COPY ./scripts /scripts
 
 RUN mkdir module /module/src /module/test
 
@@ -17,4 +17,4 @@ ONBUILD RUN npm install
 
 WORKDIR /module
 
-ENTRYPOINT ["/entrypoints/run.sh"]
+CMD ["/scripts/run.sh"]
