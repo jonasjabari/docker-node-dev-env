@@ -82,7 +82,7 @@ The package.json is not mounted into the container.
 
 ### .eslintrc
 
-The .eslintrc is project-specific and therefor needs to be specified in your project. 
+The .eslintrc is project-specific and therefore needs to be specified in your project. 
 It might look like this:
 
 ```json
