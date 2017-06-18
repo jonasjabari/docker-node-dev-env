@@ -13,8 +13,6 @@ RUN mkdir module /module/src /module/test
 ONBUILD COPY ./package.json /module
 ONBUILD COPY /.eslintrc /module
 
-ONBUILD RUN npm install
-
 WORKDIR /module
 
 CMD ["/scripts/run.sh"]
